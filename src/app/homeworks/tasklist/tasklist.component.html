@@ -1,0 +1,39 @@
+<!-- <p>tasklist works!</p> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th data-title="identificador">ID</th>
+      <th data-title="actividad">Activiti</th>
+      <th data-title="completar">Complete</th>
+      <th data-title="eliminar">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="task-0{{ i }}" *ngFor="let task of homeworks.tasks; let i = index">
+      <th class="{{ task.id }}">{{ i }}</th>
+      <td class="act-01" data-title="{{ homeworks.translation[i] }}">
+        <b [ngClass]="task.complete ? 'is-underlined' : ''">{{ task.name }}</b>
+      </td>
+      <td>
+        <button
+          [disabled]="task.complete"
+          class="button is-link"
+          (click)="complete(task)"
+        >
+          Complete
+        </button>
+      </td>
+      <td>
+        <button
+          [disabled]="!task.complete"
+          class="button is-danger"
+          (click)="delete(task, homeworks.translation[i])"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- props.tasks -->

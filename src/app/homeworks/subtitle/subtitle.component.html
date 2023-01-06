@@ -1,0 +1,13 @@
+<!-- <p>subtitle works!</p> -->
+
+<h2 class="subtitle" data-title="lista de tareas">Task List</h2>
+
+<!-- <h2 class="subtitle has-text-success">Elements: {{ tasks }}</h2> -->
+
+<div id="tasks" *ngIf="tasks > 0" class="notification is-link">
+  Number of Tasks: {{ tasks }}
+</div>
+
+<div id="no_Tasks" *ngIf="tasks == 0" class="notification is-danger">
+  There are no tasks in the list
+</div>
